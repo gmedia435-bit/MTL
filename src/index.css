@@ -134,6 +134,38 @@ img {
   box-shadow: 0 8px 24px rgba(255,255,255,0.15);
 }
 
+/* ===== NAV BRAND ===== */
+.nav-brand {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== NAV BOOK BUTTON ===== */
+.nav-btn {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  padding: 0.65rem 1.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+  flex-shrink: 0;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background-color: #d0d0d0;
+}
+
 /* ===== NAV HEADER ===== */
 header {
   position: fixed;
@@ -353,11 +385,17 @@ header {
     grid-template-columns: 1fr !important;
   }
 
-  /* Buttons */
+  /* Buttons (NOT nav button) */
   .btn {
     width: 100%;
     padding: 1rem;
     font-size: 0.8rem;
+  }
+
+  /* Nav brand shrinks on small screens */
+  .nav-brand {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
   }
 
   /* Floating WA */

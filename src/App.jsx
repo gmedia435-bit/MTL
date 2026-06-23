@@ -49,14 +49,13 @@ function App() {
       {/* Header */}
       <header>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0 }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '50%', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>
               <img src={logo} alt="Mcarthur Trim Lounge Logo" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(3.5)' }} />
             </div>
-            <span style={{ fontSize: '0.95rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }} className="hide-on-mobile">Mcarthur Trim Lounge</span>
-            <span style={{ fontSize: '0.95rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }} className="show-on-mobile">MTL</span>
+            <span className="nav-brand">Mcarthur Trim Lounge</span>
           </div>
-          <button className="btn btn-primary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.75rem' }} onClick={() => setIsModalOpen(true)}>
+          <button className="nav-btn" onClick={() => setIsModalOpen(true)}>
             Book Now
           </button>
         </div>
