@@ -188,11 +188,50 @@ button {
   display: none;
 }
 
+.floating-wa {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.floating-wa:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .section-dark, .section-light {
-    padding: 4rem 0 !important;
+    padding: 3rem 0 !important;
   }
   
+  .hero-content {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.8rem !important;
+  }
+  
+  h2 {
+    font-size: 2.2rem !important;
+  }
+  
+  .footer-grid {
+    text-align: center;
+  }
+
   .hide-on-mobile {
     display: none !important;
   }
@@ -202,6 +241,7 @@ button {
   }
 
   .modal-content {
-    padding: 2rem;
+    padding: 1.5rem;
+    width: 95%;
   }
 }

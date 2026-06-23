@@ -5,7 +5,7 @@ import background from './assets/background.jpg';
 import testimonial1 from './assets/testimonial1.jpg';
 import testimonial2 from './assets/testimonial2.jpg';
 import testimonial3 from './assets/testimonial3.jpg';
-import { MapPin, X, Star } from 'lucide-react';
+import { MapPin, X, Star, MessageCircle } from 'lucide-react';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,7 +75,7 @@ function App() {
         paddingBottom: '80px'
       }}>
         <div className="container scroll-animate" style={{ opacity: 0 }}>
-          <div style={{ maxWidth: '800px' }}>
+          <div style={{ maxWidth: '800px' }} className="hero-content">
             <p style={{ color: '#aaa', textTransform: 'uppercase', letterSpacing: '3px', marginBottom: '1.5rem', fontSize: '0.9rem' }}>— The Grooming Standard</p>
             <h1 style={{ fontSize: 'clamp(3rem, 7vw, 5rem)', lineHeight: 1.1, marginBottom: '2rem' }}>
               Stop Settling for Haircuts That <br/><span style={{ fontStyle: 'italic', color: '#ccc' }}>Disappear After One Wash.</span>
@@ -246,7 +246,7 @@ function App() {
       {/* Footer */}
       <footer className="section-dark" style={{ padding: '6rem 0 2rem 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
+          <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
             <div>
               <h2 style={{ fontSize: '1.5rem', margin: '0 0 1rem 0', textTransform: 'uppercase', letterSpacing: '2px' }}>Mcarthur Trim Lounge</h2>
               <p style={{ color: '#888', fontStyle: 'italic', marginBottom: '1rem' }}>Engineering your best first impression.</p>
@@ -312,6 +312,14 @@ function App() {
         </div>
       </div>
       
+      {/* Floating WhatsApp Button */}
+      <button 
+        className="floating-wa"
+        onClick={() => setIsModalOpen(true)}
+      >
+        <MessageCircle size={32} />
+      </button>
+
       {/* Inline styles for hover effects */}
       <style>{`
         .gallery-img:hover { transform: scale(1.03); filter: grayscale(0%) !important; }
