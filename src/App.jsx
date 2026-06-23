@@ -5,7 +5,7 @@ import background from './assets/background.jpg';
 import testimonial1 from './assets/testimonial1.jpg';
 import testimonial2 from './assets/testimonial2.jpg';
 import testimonial3 from './assets/testimonial3.jpg';
-import { MapPin, X, Star, MessageCircle } from 'lucide-react';
+import { MapPin, X, Star } from 'lucide-react';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,16 +47,16 @@ function App() {
   return (
     <>
       {/* Header */}
-      <header style={{ position: 'fixed', top: 0, width: '100%', zIndex: 100, padding: '1.5rem 0', background: 'rgba(10,10,10,0.9)', backdropFilter: 'blur(10px)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <header>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ width: '55px', height: '55px', borderRadius: '50%', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>
               <img src={logo} alt="Mcarthur Trim Lounge Logo" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(3.5)' }} />
             </div>
-            <h2 style={{ fontSize: '1.2rem', margin: 0, textTransform: 'uppercase', letterSpacing: '2px' }} className="hide-on-mobile">Mcarthur Trim Lounge</h2>
-            <h2 style={{ fontSize: '1.2rem', margin: 0, textTransform: 'uppercase', letterSpacing: '2px' }} className="show-on-mobile">MTL</h2>
+            <span style={{ fontSize: '0.95rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }} className="hide-on-mobile">Mcarthur Trim Lounge</span>
+            <span style={{ fontSize: '0.95rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }} className="show-on-mobile">MTL</span>
           </div>
-          <button className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }} onClick={() => setIsModalOpen(true)}>
+          <button className="btn btn-primary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.75rem' }} onClick={() => setIsModalOpen(true)}>
             Book Now
           </button>
         </div>
@@ -68,26 +68,26 @@ function App() {
         position: 'relative', 
         display: 'flex', 
         alignItems: 'center',
-        backgroundImage: `linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.95)), url(${background})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.97) 100%), url(${background})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        paddingTop: '120px',
-        paddingBottom: '80px'
+        backgroundPosition: 'center top',
+        paddingTop: '90px',
+        paddingBottom: '4rem'
       }}>
         <div className="container scroll-animate" style={{ opacity: 0 }}>
-          <div style={{ maxWidth: '800px' }} className="hero-content">
-            <p style={{ color: '#aaa', textTransform: 'uppercase', letterSpacing: '3px', marginBottom: '1.5rem', fontSize: '0.9rem' }}>— The Grooming Standard</p>
-            <h1 style={{ fontSize: 'clamp(3rem, 7vw, 5rem)', lineHeight: 1.1, marginBottom: '2rem' }}>
-              Stop Settling for Haircuts That <br/><span style={{ fontStyle: 'italic', color: '#ccc' }}>Disappear After One Wash.</span>
+          <div style={{ maxWidth: '700px' }} className="hero-content">
+            <p style={{ color: '#888', textTransform: 'uppercase', letterSpacing: '3px', marginBottom: '1.25rem', fontSize: '0.78rem' }}>— The Grooming Standard</p>
+            <h1 style={{ fontSize: 'clamp(2.4rem, 6vw, 4.8rem)', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+              Stop Settling for Haircuts That <span style={{ fontStyle: 'italic', color: '#999' }}>Disappear After One Wash.</span>
             </h1>
-            <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem', color: '#aaa', maxWidth: '600px', lineHeight: 1.8 }}>
-              You know the feeling. You leave the chair looking decent, but two days later, the lineup fades, the shape is lost, and the magic is gone. A bad fade isn't just a mistake—it's a blow to your confidence. 
+            <p style={{ fontSize: '1rem', marginBottom: '1.25rem', color: '#aaa', maxWidth: '560px', lineHeight: 1.8 }}>
+              You know the feeling. You leave the chair looking decent, but two days later the lineup fades, the shape is lost, and the magic is gone. A bad fade isn't just a mistake — it's a blow to your confidence.
             </p>
-            <p style={{ fontSize: '1.3rem', marginBottom: '3rem', color: '#fff', maxWidth: '600px' }}>
+            <p style={{ fontSize: '1.05rem', marginBottom: '2.5rem', color: '#ddd', fontWeight: 500 }}>
               Kumasi deserves better. Welcome to a higher standard of grooming.
             </p>
-            <button className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1.2rem 2.5rem' }} onClick={() => setIsModalOpen(true)}>
-              Upgrade Your Look
+            <button className="btn btn-primary" style={{ fontSize: '0.85rem', padding: '1rem 2rem' }} onClick={() => setIsModalOpen(true)}>
+              Experience The Difference
             </button>
           </div>
         </div>
@@ -313,11 +313,10 @@ function App() {
       </div>
       
       {/* Floating WhatsApp Button */}
-      <button 
-        className="floating-wa"
-        onClick={() => setIsModalOpen(true)}
-      >
-        <MessageCircle size={32} />
+      <button className="floating-wa" onClick={() => setIsModalOpen(true)} aria-label="Book via WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.738 5.469 2.027 7.77L0 32l8.469-2.004A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 0 1-6.77-1.854l-.485-.288-5.027 1.189 1.21-4.898-.317-.504A13.245 13.245 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.878c-.398-.199-2.355-1.162-2.72-1.294-.364-.133-.629-.199-.894.199-.265.398-1.028 1.294-1.26 1.56-.232.265-.464.298-.862.1-.398-.2-1.68-.619-3.2-1.977-1.183-1.056-1.981-2.36-2.213-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.464.597-.696.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.894-2.155-1.225-2.95-.322-.775-.65-.67-.894-.683l-.762-.013c-.265 0-.696.1-1.061.497-.364.398-1.393 1.362-1.393 3.318s1.427 3.848 1.626 4.113c.199.265 2.808 4.286 6.803 6.014.951.41 1.693.655 2.271.839.954.304 1.823.261 2.51.158.765-.114 2.355-.963 2.687-1.893.332-.93.332-1.727.232-1.893-.099-.166-.364-.265-.762-.464z"/>
+        </svg>
       </button>
 
       {/* Inline styles for hover effects */}
